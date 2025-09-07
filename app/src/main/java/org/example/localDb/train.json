@@ -1,0 +1,54 @@
+[
+  {
+    "trainId": "T123",
+    "trainNo": "12951",
+    "seats": [
+      [0, 1, 0, 1],
+      [1, 1, 0, 0]
+    ],
+    "station": {
+      "SRC": "Mumbai",
+      "DST": "Delhi"
+    },
+    "stations": ["Mumbai", "Surat", "Vadodara", "Ratlam", "Kota", "Delhi"]
+  },
+  {
+    "trainId": "T456",
+    "trainNo": "12230",
+    "seats": [
+      [1, 0, 1],
+      [0, 1, 0]
+    ],
+    "station": {
+      "SRC": "Delhi",
+      "DST": "Lucknow"
+    },
+    "stations": ["Delhi", "Ghaziabad", "Kanpur", "Lucknow"]
+  },
+  {
+    "trainId": "T789",
+    "trainNo": "12657",
+    "seats": [
+      [0, 0, 1, 1],
+      [1, 1, 0, 0]
+    ],
+    "station": {
+      "SRC": "Chennai",
+      "DST": "Bangalore"
+    },
+    "stations": ["Chennai", "Vellore", "Krishnagiri", "Bangalore"]
+  },
+  {
+    "trainId": "T101",
+    "trainNo": "12785",
+    "seats": [
+      [1, 1, 0],
+      [0, 1, 1]
+    ],
+    "station": {
+      "SRC": "Bangalore",
+      "DST": "Hyderabad"
+    },
+    "stations": ["Bangalore", "Kurnool", "Mahbubnagar", "Hyderabad"]
+  }
+]

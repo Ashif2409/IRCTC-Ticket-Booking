@@ -3,9 +3,82 @@
  */
 package org.example;
 
+import org.example.entities.User;       // <-- you forgot this import
+import org.example.services.UserService;
+import org.example.utils.HashPassword;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.UUID;
+
 public class App {
     public static void main(String[] args) {
-        
+        System.out.println("IRCTC Application is running");
+        Scanner scanner = new Scanner(System.in);
+        int option = 0;
+        UserService userService;
 
+        try {
+            userService = new UserService();
+        } catch (Exception e) {
+            System.out.println("Something went wrong while loading users: " + e.getMessage());
+            return;
+        }
+
+        while (option != 7) {
+            System.out.println("Choose one option");
+            System.out.println("1. Signup");
+            System.out.println("2. Login");
+            System.out.println("7. Exit");
+
+            option = scanner.nextInt();
+
+            switch (option) {
+                case 1:
+                    System.out.println("Enter your name:");
+                    String name = scanner.next();
+
+                    System.out.println("Enter your password:");
+                    String password = scanner.next();
+
+                    User newUser = new User(
+                            name,
+                            password,
+                            HashPassword.createPassword(password), // hash password before storing
+                            new ArrayList<>(),                   // empty ticket list
+                            UUID.randomUUID().toString()         // unique userId
+                    );
+
+                    try {
+                        userService.signUp(newUser);
+                        System.out.println("Successfully Signup");
+                    } catch (Exception e) {
+                        System.out.println("Error while adding user: " + e.getMessage());
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Enter your name:");
+                    String loginName = scanner.next();
+
+                    System.out.println("Enter your password:");
+                    String loginPassword = scanner.next();
+
+                    boolean success = userService.login(loginName, loginPassword);
+                    if (success) {
+                        System.out.println("Login successful! Welcome " + loginName);
+                    } else {
+                        System.out.println("Invalid username or password!");
+                    }
+                    break;
+
+                case 7:
+                    System.out.println("Exiting application. Goodbye!");
+                    break;
+
+                default:
+                    System.out.println("Invalid option, please try again.");
+            }
+        }
     }
 }
