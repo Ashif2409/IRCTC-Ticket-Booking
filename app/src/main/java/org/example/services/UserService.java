@@ -2,6 +2,7 @@ package org.example.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.entities.Ticket;
 import org.example.entities.User;
 import org.example.utils.HashPassword;
 
@@ -57,6 +58,32 @@ public class UserService {
         saveAllUsers();
         return true;
     }
+
+    public List<Ticket> fetchBooking(){
+        return user.getTicketBooked();
+    }
+
+    public Boolean cancelBooking(String ticketId) {
+        try {
+            // Remove ticket from the current user
+            boolean removed = user.getTicketBooked()
+                    .removeIf(ticket -> ticket.getTicketId().equals(ticketId));
+
+            if (removed) {
+                userList = userList.stream()
+                        .map(u -> u.getUserId().equals(user.getUserId()) ? user : u)
+                        .toList();
+
+                saveAllUsers();
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return false;
+        }
+    }
+
 
     private void saveAllUsers() throws IOException{
         File users=new File(USER_DB_PATH);
