@@ -3,6 +3,7 @@ package org.example.services;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.entities.Ticket;
+import org.example.entities.Train;
 import org.example.entities.User;
 import org.example.utils.HashPassword;
 
@@ -15,15 +16,18 @@ import java.util.Optional;
 public class UserService {
     private  User user;
     private  List<User> userList;
-    public  final String USER_DB_PATH="../localDb/user.json";
+    public  final String USER_DB_PATH="D:/CSE/webDevelopment/IRCTC-Ticket-Booking/app/src/main/java/org/example/localDb/user.json";
     private final ObjectMapper mapper=new ObjectMapper();
+    private final TrainService trainService;
 
     public UserService(User user1) throws IOException{
         user=user1;
+        this.trainService=new TrainService();
         loadAllUsers();
     }
 
     public UserService() throws IOException{
+        this.trainService=new TrainService();
         loadAllUsers();
     }
 
@@ -84,7 +88,9 @@ public class UserService {
         }
     }
 
-
+    public List<Train> getTrains(String src,String desc){
+        return trainService.searchTrain(src,desc);
+    }
     private void saveAllUsers() throws IOException{
         File users=new File(USER_DB_PATH);
         if(users.getParentFile()!=null){

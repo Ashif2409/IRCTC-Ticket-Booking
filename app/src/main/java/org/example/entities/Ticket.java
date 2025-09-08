@@ -10,6 +10,9 @@ public class Ticket {
     private Date dateOfTravel;
     private Train train;
 
+    public Ticket(){
+
+    }
     public String getTicketId() {
         return ticketId;
     }

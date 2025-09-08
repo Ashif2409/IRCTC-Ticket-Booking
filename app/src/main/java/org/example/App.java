@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.entities.Ticket;
+import org.example.entities.Train;
 import org.example.entities.User;
 import org.example.services.UserService;
 import org.example.utils.HashPassword;
@@ -30,6 +31,7 @@ public class App {
             System.out.println("2. Login");
             System.out.println("3. View Bookings");
             System.out.println("4. Cancel Booking");
+            System.out.println("5. Search Train");
             System.out.println("7. Exit");
 
             option = scanner.nextInt();
@@ -98,6 +100,17 @@ public class App {
                         System.out.println("Your booking was cancelled successfully.");
                     } else {
                         System.out.println("Error occurred while cancelling booking.");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Source");
+                    String src=scanner.nextLine();
+                    System.out.println("Destination");
+                    String dest=scanner.nextLine();
+                    List<Train>trainList=userService.getTrains(src,dest);
+                    System.out.println("Debuggg");
+                    for(Train train:trainList){
+                        System.out.printf("train with trainId %s",train.getTrainId());
                     }
                     break;
 

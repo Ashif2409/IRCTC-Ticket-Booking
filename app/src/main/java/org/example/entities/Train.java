@@ -18,14 +18,6 @@ public class Train {
         this.trainId = trainId;
     }
 
-    public Train(String trainId, String trainNo, List<List<Integer>> seats, Map<String, String> station, List<String> stations) {
-        this.trainId = trainId;
-        this.trainNo = trainNo;
-        this.seats = seats;
-        this.station = station;
-        this.stations = stations;
-    }
-
     public String getTrainNo() {
         return trainNo;
     }
