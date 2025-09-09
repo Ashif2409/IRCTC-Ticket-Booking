@@ -1,104 +1,83 @@
- [
-    {
-      "name": "Rahul Sharma",
-      "password": "mypassword123",
-      "hashedPassword": "5f4dcc3b5aa765d61d8327deb882cf99",
-      "ticketBooked": [
-        {
-          "ticketId": "TK1001",
-          "userId": "U001",
-          "source": "Mumbai",
-          "destination": "Delhi",
-          "dateOfTravel": "2025-09-15T10:30:00Z",
-          "train": {
-            "trainId": "T123",
-            "trainNo": "12951",
-            "seats": [
-              [0, 1, 0, 1,0],
-              [1, 1, 0, 0,0],
-              [0, 1, 0, 0,0],
-              [0, 1, 0, 0,0],
-              [0, 0, 0, 0,0]
-            ],
-            "station": {
-              "SRC": "Mumbai",
-              "DST": "Delhi"
-            },
-            "stations": ["Mumbai", "Surat", "Vadodara", "Ratlam", "Kota", "Delhi"]
-          }
-        },
-        {
-          "ticketId": "TK1002",
-          "userId": "U001",
-          "source": "Delhi",
-          "destination": "Lucknow",
-          "dateOfTravel": "2025-10-01T06:45:00Z",
-          "train": {
-            "trainId": "T456",
-            "trainNo": "12230",
-            "seats": [
-              [0, 1, 0, 1,0],
-              [1, 1, 0, 0,0],
-              [0, 1, 0, 0,0],
-              [0, 1, 0, 0,0],
-              [0, 0, 0, 0,0]
-            ],
-            "station": {
-              "SRC": "Delhi",
-              "DST": "Lucknow"
-            },
-            "stations": ["Delhi", "Ghaziabad", "Kanpur", "Lucknow"]
-          }
-        }
-      ],
-      "userId": "U001"
-    },
-    {
-      "name": "Priya Verma",
-      "password": "securePass!@#",
-      "hashedPassword": "e10adc3949ba59abbe56e057f20f883e",
-      "ticketBooked": [
-        {
-          "ticketId": "TK2001",
-          "userId": "U002",
-          "source": "Chennai",
-          "destination": "Bangalore",
-          "dateOfTravel": "2025-09-20T09:00:00Z",
-          "train": {
-            "trainId": "T789",
-            "trainNo": "12657",
-            "seats": [
-              [0, 0, 1, 1],
-              [1, 1, 0, 0]
-            ],
-            "station": {
-              "SRC": "Chennai",
-              "DST": "Bangalore"
-            },
-            "stations": ["Chennai", "Vellore", "Krishnagiri", "Bangalore"]
-          }
-        },
-        {
-          "ticketId": "TK2002",
-          "userId": "U002",
-          "source": "Bangalore",
-          "destination": "Hyderabad",
-          "dateOfTravel": "2025-10-05T07:30:00Z",
-          "train": {
-            "trainId": "T101",
-            "trainNo": "12785",
-            "seats": [
-              [1, 1, 0],
-              [0, 1, 1]
-            ],
-            "station": {
-              "SRC": "Bangalore",
-              "DST": "Hyderabad"
-            },
-            "stations": ["Bangalore", "Kurnool", "Mahbubnagar", "Hyderabad"]
-          }
-        }
-      ],
-      "userId": "U002"
+[ {
+  "name" : "Rahul Sharma",
+  "password" : "mypassword123",
+  "hashedPassword" : "5f4dcc3b5aa765d61d8327deb882cf99",
+  "ticketBooked" : [ {
+    "ticketId" : "TK1001",
+    "userId" : "U001",
+    "source" : "Mumbai",
+    "destination" : "Delhi",
+    "dateOfTravel" : 1757932200000,
+    "train" : {
+      "trainId" : "T123",
+      "trainNo" : "12951",
+      "seats" : [ [ 0, 1, 0, 1, 0 ], [ 1, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 0, 0, 0, 0 ] ],
+      "station" : {
+        "SRC" : "Mumbai",
+        "DST" : "Delhi"
+      },
+      "stations" : [ "Mumbai", "Surat", "Vadodara", "Ratlam", "Kota", "Delhi" ]
     }
-  ]
+  }, {
+    "ticketId" : "TK1002",
+    "userId" : "U001",
+    "source" : "Delhi",
+    "destination" : "Lucknow",
+    "dateOfTravel" : 1759301100000,
+    "train" : {
+      "trainId" : "T456",
+      "trainNo" : "12230",
+      "seats" : [ [ 0, 1, 0, 1, 0 ], [ 1, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 0, 0, 0, 0 ] ],
+      "station" : {
+        "SRC" : "Delhi",
+        "DST" : "Lucknow"
+      },
+      "stations" : [ "Delhi", "Ghaziabad", "Kanpur", "Lucknow" ]
+    }
+  } ],
+  "userId" : "U001"
+}, {
+  "name" : "Priya Verma",
+  "password" : "securePass!@#",
+  "hashedPassword" : "e10adc3949ba59abbe56e057f20f883e",
+  "ticketBooked" : [ {
+    "ticketId" : "TK2001",
+    "userId" : "U002",
+    "source" : "Chennai",
+    "destination" : "Bangalore",
+    "dateOfTravel" : 1758358800000,
+    "train" : {
+      "trainId" : "T789",
+      "trainNo" : "12657",
+      "seats" : [ [ 0, 0, 1, 1 ], [ 1, 1, 0, 0 ] ],
+      "station" : {
+        "SRC" : "Chennai",
+        "DST" : "Bangalore"
+      },
+      "stations" : [ "Chennai", "Vellore", "Krishnagiri", "Bangalore" ]
+    }
+  }, {
+    "ticketId" : "TK2002",
+    "userId" : "U002",
+    "source" : "Bangalore",
+    "destination" : "Hyderabad",
+    "dateOfTravel" : 1759649400000,
+    "train" : {
+      "trainId" : "T101",
+      "trainNo" : "12785",
+      "seats" : [ [ 1, 1, 0 ], [ 0, 1, 1 ] ],
+      "station" : {
+        "SRC" : "Bangalore",
+        "DST" : "Hyderabad"
+      },
+      "stations" : [ "Bangalore", "Kurnool", "Mahbubnagar", "Hyderabad" ]
+    }
+  } ],
+  "userId" : "U002"
+}, {
+  "name" : "ashif",
+  "password" : "ashif1234",
+  "hashedPassword" : "$2a$12$w7x5MlChD0xRbDaou8X9BOEOheWgEfvZvB1JZcO69n7c90azGKq4y",
+  "ticketBooked" : [ ],
+  "userId" : "d9a6a2cd-1ab0-419d-8e57-5d3dea30872c"
+} ]

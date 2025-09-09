@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class TrainService {
@@ -16,7 +17,9 @@ public class TrainService {
     private final ObjectMapper mapper=new ObjectMapper();
 
     public TrainService() throws IOException {
-            System.out.println("Line 21");
+       addTrainToDB();
+    }
+    private void addTrainToDB() throws IOException{
         File trains=new File(TRAIN_DB_PATH);
         if(!trains.exists() || trains.length()==0){
             trainList=new ArrayList<>();
@@ -45,6 +48,18 @@ public class TrainService {
                     return srcIdx != -1 && destIdx != -1 && srcIdx < destIdx;
                 })
                 .collect(Collectors.toList());
+    }
+    public Train searchTrainById(String trainId){
+        try{
+           Optional<Train>train= trainList.stream().filter(t -> t.getTrainId().equals(trainId)).findFirst();
+            return train.orElse(null);
+        }catch (Exception e){
+            return null;
+        }
+    }
+    public void saveTrain(Train train) throws IOException{
+        trainList=trainList.stream().map(train1 -> train1.getTrainId().equals(train.getTrainId())? train:train1).toList();
+        addTrainToDB();
     }
 
 }
